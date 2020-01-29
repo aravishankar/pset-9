@@ -26,8 +26,33 @@ public class Exercises {
 	
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
 		// write your code here
+
+		ArrayList<String> empty = new ArrayList<String>(); // empty string to return
+
+		// check that conditions are met
+		if (values == null || values.size() < n || n < 0) {
+			return empty;
+		}
+
+		// initialize output array + other things
+		ArrayList<String> result = new ArrayList<>();
+		int length = values.size();
+		int index = n;
+
+		// append first n elements
+		for (int i = 0; i < n; i++) {
+			result.add(values.get(i));
+		}
+
+		// append last n elements
+		for (int j = n; j < 2 * n; j++) {
+			result.add(values.get(length-index));
+			index--;
+		}
+
+		return result;
 		
-		return null;	// default return value to ensure compilation
+		// return null;	// default return value to ensure compilation
 	}
 	
 	public int difference(ArrayList<Integer> numbers) {
