@@ -8,8 +8,20 @@ public class Exercises {
 		}
 		
 		// write your code here
+
+		// finds endpoints
+		int lastIndexA = a.size();
+		int lastIndexB = b.size();
+
+		if (a.get(0) == b.get(0)) { // compares first value
+			return true;
+		} else if (a.get(lastIndexA - 1) == b.get(lastIndexB - 1)) { // compares last value
+			return true;
+		} else {
+			return false;
+		}
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
