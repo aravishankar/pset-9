@@ -224,8 +224,23 @@ public class Exercises {
 	
 	public boolean consecutive(ArrayList<Integer> numbers) {
 		// write your code here
+
+		// checks that conditions are met
+		if (numbers == null || numbers.size() < 3) {
+			return false;
+		}
+
+		// verifies if sequence of 3 or more even/odd numbers are present
+		boolean isConsecutive = false;
+		for (int i = 2; i < numbers.size(); i++) {
+			if (numbers.get(i) % 2 == numbers.get(i - 1) % 2 && numbers.get(i) % 2 == numbers.get(i - 2) % 2) {
+				isConsecutive = true;
+			}
+		}
+
+		return isConsecutive;
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public boolean balance(ArrayList<Integer> numbers) {
