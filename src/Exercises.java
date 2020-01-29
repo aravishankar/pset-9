@@ -86,8 +86,39 @@ public class Exercises {
 	
 	public double biggest(ArrayList<Double> numbers) {
 		// write your code here
+
+		// check that conditions are met
+		if (numbers == null || numbers.size() < 3 || numbers.size() % 2 == 0) {
+			return -1;
+		}
+
+		// check that no negatives condition is met
+		boolean noNegatives = true;
+		for (int i = 0; i < numbers.size(); i++) {
+			if (numbers.get(i) < 0) {
+				noNegatives = false;
+			}
+		}
+		if (!noNegatives) {
+			return -1;
+		}
+
+		// initialize variables
+		double largest = numbers.get(0);
+		int middleIndex = numbers.size() / 2;
+		int finalIndex = numbers.size() - 1;
+
+		// finds if middle or final numbers are largest
+		if (numbers.get(middleIndex) > largest) {
+			largest = numbers.get(middleIndex);
+		}
+		if (numbers.get(finalIndex) > largest) {
+			largest = numbers.get(finalIndex);
+		}
+
+		return largest;
 		
-		return -1;		// default return value to ensure compilation
+		// return -1;		// default return value to ensure compilation
 	}
 	
 	public ArrayList<String> middle(ArrayList<String> values) {
