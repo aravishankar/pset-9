@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Exercises {
 
-	// cock and ball torture
 
 	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
 		if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
