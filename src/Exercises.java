@@ -121,7 +121,6 @@ public class Exercises {
 		// return -1;		// default return value to ensure compilation
 	}
 	
-	//broken
 	public ArrayList<String> middle(ArrayList<String> values) {
 		// write your code here
 		
@@ -148,7 +147,6 @@ public class Exercises {
 		int firstIndex = middleIndex - 1;
 		int lastIndex = middleIndex + 1;
 
-		// String[] result = { values[firstIndex], values[middleIndex], values[lastIndex] };
 		ArrayList<String> result = new ArrayList<String>();
 		result.add(values.get(firstIndex));
 		result.add(values.get(middleIndex));
@@ -233,7 +231,8 @@ public class Exercises {
 		// verifies if sequence of 3 or more even/odd numbers are present
 		boolean isConsecutive = false;
 		for (int i = 2; i < numbers.size(); i++) {
-			if (numbers.get(i) % 2 == numbers.get(i - 1) % 2 && numbers.get(i) % 2 == numbers.get(i - 2) % 2) {
+			if (numbers.get(i) % 2 == numbers.get(i - 1) % 2 && 
+			  numbers.get(i) % 2 == numbers.get(i - 2) % 2) {
 				isConsecutive = true;
 			}
 		}
