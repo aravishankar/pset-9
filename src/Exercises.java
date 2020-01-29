@@ -121,14 +121,72 @@ public class Exercises {
 		// return -1;		// default return value to ensure compilation
 	}
 	
+	//broken
 	public ArrayList<String> middle(ArrayList<String> values) {
 		// write your code here
 		
-		return null;	// default return value to ensure compilation
+		ArrayList<String> empty = new ArrayList<String>(); // empty string to return
+
+		// check that conditions are met
+		if (values == null || values.size() < 3 || values.size() % 2 == 0) {
+			return empty;
+		}
+
+		// check that no null condition is met
+		boolean containsNull = false;
+		for (int i = 0; i < values.size(); i++) {
+			if (values.get(i) == null) {
+				containsNull = true;
+			}
+		}
+		if (containsNull) {
+			return empty;
+		}
+
+		// finds middle 3 elements
+		int middleIndex = values.size() / 2;
+		int firstIndex = middleIndex - 1;
+		int lastIndex = middleIndex + 1;
+
+		// String[] result = { values[firstIndex], values[middleIndex], values[lastIndex] };
+		ArrayList<String> result = new ArrayList<String>();
+		result.add(values.get(firstIndex));
+		result.add(values.get(middleIndex));
+		result.add(values.get(lastIndex));
+
+		return result;
+
+		// return null;	// default return value to ensure compilation
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
 		// write your code here
+
+		// checks that conditions are met
+		if (numbers == null || numbers.size() < 3) {
+			return false;
+		}
+
+		// initialize sequence vars
+		int lowestNum = numbers.get(0);
+		int middleNum = numbers.get(1);
+		int finalNum = numbers.get(2);
+
+		// iterates through array for increasing sequences
+		for (int i = 0; i < numbers.size(); i++) {
+			if (lowestNum < middleNum && middleNum < finalNum) {
+				return true;
+			}
+
+			if (i + 2 < numbers.size()) {
+				lowestNum = numbers.get(i);
+				middleNum = numbers.get(i + 1);
+				finalNum = numbers.get(i + 2);
+			} else {
+				return false;
+			}
+
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
