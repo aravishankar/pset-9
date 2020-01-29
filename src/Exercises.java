@@ -193,8 +193,33 @@ public class Exercises {
 	
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
 		// write your code here
+
+		// checks that conditions are met
+		if (numbers == null || numbers.size() < 1) {
+			return false;
+		}
+
+		// calculates if everywhere condition is met
+		boolean isEverywhere = true;
+		for (int i = 0; i < numbers.size(); i++) {
+			if (i == 0) {
+				if (numbers.get(i) != x && numbers.get(i + 1) != x) {
+					isEverywhere = false;
+				}
+			} else if (i == numbers.size() - 1) {
+				if (numbers.get(i) != x && numbers.get(i - 1) != x) {
+					isEverywhere = false;
+				}
+			} else {
+				if (numbers.get(i - 1) != x && numbers.get(i) != x && numbers.get(i + 1) != x) {
+					isEverywhere = false;
+				}
+			}
+		}
+
+		return isEverywhere;
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public boolean consecutive(ArrayList<Integer> numbers) {
