@@ -271,7 +271,40 @@ public class Exercises {
 	
 	public int clumps(ArrayList<String> values) {
 		// write your code here
+
+		// checks if conditions are met
+		if (values == null) {
+			return -1;
+		}
+
+		// checks if no null condition is met
+		boolean containsNull = false;
+		for (int i = 0; i < values.size(); i++) {
+			if (values.get(i) == null) {
+				containsNull = true;
+			}
+		}
+		if (containsNull) {
+			return -1;
+		}
+
+		// find clumps and tally them
+		boolean isClump = false;
+		int clumpCount = 0;
+
+		for (int i = 1; i < values.size(); i++) {
+			if (values.get(i).equals(values.get(i - 1))) {
+				if (!isClump) {
+					clumpCount++;
+				}
+				isClump = true;
+			} else {
+				isClump = false;
+			}
+		}
+
+		return clumpCount;
 		
-		return -1;		// default return value to ensure compilation
+		// return -1;		// default return value to ensure compilation
 	}
 }
