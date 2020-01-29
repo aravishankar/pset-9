@@ -245,6 +245,26 @@ public class Exercises {
 	
 	public boolean balance(ArrayList<Integer> numbers) {
 		// write your code here
+
+		// checks that conditions are met
+		if (numbers == null || numbers.size() < 2) {
+			return false;
+		}
+
+		// verifies if balancing condition is met
+		for (int i = 0; i < numbers.size(); i++) {
+			int firstSum = 0;
+			int secondSum = 0;
+			for (int j = 0; j < i; j++) {
+				firstSum += numbers.get(j);
+			}
+			for (int k = i; k < numbers.size(); k++) {
+				secondSum += numbers.get(k);
+			}
+			if (firstSum == secondSum) {
+				return true;
+			}
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
